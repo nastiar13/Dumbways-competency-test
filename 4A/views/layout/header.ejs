@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="d-flex">
+           <a class="navbar-brand">Task Collections</a>
+        <a class="btn link-dark" href="/">Home</a> 
+        </div>
+        
+        <form class="d-flex">
+            <% if (isLogin == 0) { %>
+            <button type="button" class="btn btn-light"><a class="btn" href="/login">Login</a></button>
+            <button type="button" class="btn btn-dark"><a class="btn link-light" href="/register">Register</a></button>
+            <% } %>
+            <% if (isLogin == 1) { %>
+            <button type="button" class="btn btn-dark"><a class="btn link-light" href="/logout">Logout</a></button>
+            <% } %>
+            
+            
+        </form>
+    </div>
+</nav>

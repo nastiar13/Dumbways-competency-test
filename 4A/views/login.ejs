@@ -1,0 +1,29 @@
+<div class="login">
+    <form action="/login" method="post">
+        <% if (msg.length !== 0) { %>
+            <div class="alert danger">
+               <p><%= msg %> </p>
+            </div>
+           <% } %>
+        <h1>Login</h1>
+        <p>Join us and get the benefits!</p>
+        <button class="google-signin-btn">
+            <img style="margin-right: 1rem;" width="25px" src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+            Sign in with Google
+        </button>
+        <div class="signin__email">
+            <div class="line"></div>
+            <p style="margin: 0 20px;color: #b5b4bd;">or Sign in with Email</p>
+            
+            <div class="line"></div>
+        </div>
+        <label class="auth" for="email">Email*</label>
+        <input class="auth" type="text" id="email" name="email">
+        <label class="auth" for="pass">Password*</label>
+        <input class="auth" type="password" id="pass" name="pass">
+        <a class="forget-pass" href="#">Forget password?</a>
+        <button class="btn-login" type="submit">Login</button>
+        <p>Not registered yet? <a href="/register">Create an Account</a></p>
+
+    </form>
+</div>

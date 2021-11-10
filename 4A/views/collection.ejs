@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Collections</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <% coll.forEach(e => { %>
+         <div class="col-sm-3">
+            <a href="/task/<%= e.id %> " class="btn btn-outline-secondary w-100 mb-2" style="height: 15rem;">
+                <h2><%= e.name %> </h2>
+                
+            </a>
+        </div>
+        <% }) %>
+        
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-outline-secondary w-100 mb-2" style="height: 15rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <h2>Add Collection</h2>
+                <a>
+                    <img src="https://img.icons8.com/ios-filled/50/000000/plus.png"/>
+                </a>
+                
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <form action="/add-coll/<%= id %> " method="post">
+                            <label for="coll"></label>
+                            <input type="text" id="coll" name="coll" required>
+                            <button class="btn btn-primary" type="submit">Add Collection</button>
+                        </form>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+      
+</div>
