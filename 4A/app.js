@@ -38,12 +38,14 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     db.query('select * from users_tb', (err, users) => {
+        isLogin = 0
         res.render('home', {
         title: "home",
         layout : 'layout/index',
         users,
         isLogin
         })
+
     })
     
 })
